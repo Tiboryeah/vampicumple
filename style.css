@@ -1453,9 +1453,11 @@ body:has(button:hover) .custom-cursor {
 
   .cards-grid { grid-template-columns: 1fr; }
 
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: 1fr; gap: 24px; }
 
-  .jerbos-grid { grid-template-columns: repeat(2, 1fr); }
+  .jerbos-grid { grid-template-columns: 1fr; gap: 24px; }
+
+  .family-grid { grid-template-columns: 1fr; gap: 24px; }
 
   .music-player {
     bottom: 16px;
@@ -1552,4 +1554,23 @@ body:has(button:hover) .custom-cursor {
 
 .garden-item.special-character:hover .garden-character-img {
   filter: grayscale(0) contrast(1.2);
+}
+
+/* ══════════════════════════════════════════
+   SCROLL REVEAL & FLUIDEZ
+   ══════════════════════════════════════════ */
+[data-reveal], [data-reveal-stagger] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal].revealed, [data-reveal-stagger].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-grid, .jerbos-grid, .family-grid {
+  will-change: transform;
 }
