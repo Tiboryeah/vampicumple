@@ -136,11 +136,23 @@ body:has(button:hover) .custom-cursor {
   opacity: 0.8;
 }
 
+.music-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  overflow: hidden;
+}
+
 .music-title {
   font-size: 0.78rem;
   font-family: var(--font-heading);
   color: var(--cream);
   font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
 }
 
 /* Volumen */
@@ -1472,6 +1484,19 @@ body:has(button:hover) .custom-cursor {
 
   .final-content { padding: 0 12px; }
 
+  /* Ajustes de El Principito para Móvil */
+  .principito-illustrations {
+    margin: -10px auto 30px;
+  }
+  .principito-drawing {
+    max-width: 140px;
+    opacity: 0.7;
+  }
+  .principito-quote {
+    font-size: 0.95rem;
+    padding: 0 20px;
+  }
+
   body { cursor: auto; }
   .custom-cursor, .custom-cursor-trail { display: none; }
 }
@@ -1482,8 +1507,16 @@ body:has(button:hover) .custom-cursor {
   .hero-title { font-size: 1.5rem; }
   .btn-enter { padding: 14px 32px; font-size: 1rem; }
   .btn-surprise { padding: 16px 36px; }
-  .music-player { min-width: 180px; }
-  .music-title { font-size: 0.72rem; }
+  .music-player { 
+    min-width: unset; 
+    width: auto;
+    max-width: calc(100vw - 40px);
+    padding: 10px 14px;
+  }
+  .music-title { max-width: 80px; font-size: 0.72rem; }
+  .music-label { display: none; }
+  .volume-control { margin: 0 5px; }
+  .volume-slider { width: 40px; }
 
   /* Ajustes del Modal Sorpresa para Móvil */
   .modal-content {
